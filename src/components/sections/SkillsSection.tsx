@@ -110,7 +110,7 @@ const SkillsSection = () => {
           <span className="text-sm font-medium text-secondary uppercase tracking-widest">
             What I Work With
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold font-heading mt-4 gradient-text">
+          <h2 className="text-4xl sm:text-5xl font-bold font-heading mt-4 shimmer-text">
             Skills & Technologies
           </h2>
         </motion.div>

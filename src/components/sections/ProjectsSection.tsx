@@ -11,50 +11,69 @@ interface Project {
   link?: string;
   github?: string;
   featured?: boolean;
+  repoLink?: string;
 }
 
 const projects: Project[] = [
   {
-    title: "Tune Space 2.0",
-    description: "An enhanced music streaming platform with improved UI/UX, playlist management, and social features for music enthusiasts.",
-    techStack: ["React", "Node.js", "MongoDB", "Spotify API"],
-    featured: true,
+    "title": "SOND 3D Official E-commerce & Operations Website",
+    "description": "A comprehensive, full-stack website built to handle all business functions for the Calgary-based 3D printing operation. Features include customer-facing e-commerce for customized orders, a detailed product gallery, and an internal dashboard for managing print fulfillment, inventory, and client communication.",
+    "techStack": ["React", "Next.js", "Tailwind CSS", "TypeScript", "Node.js", "Supabase"],
+    "repoLink": "https://github.com/aryanbhanot05/sond_3d",
+    "link": "https://sond3d.vercel.app/"
   },
   {
-    title: "Remote Job Locator",
-    description: "A comprehensive job board specifically designed for remote work opportunities, featuring advanced filters and real-time updates.",
-    techStack: ["React", "Express", "PostgreSQL", "REST API"],
-    featured: true,
+    "title": "Tune Space 2.0",
+    "description": "An enhanced music streaming platform with improved UI/UX, playlist management, and social features for music enthusiasts.",
+    "techStack": ["React", "Node.js", "supabase", "Spotify API", "Amazon API", "GoogleTTS"],
+    "featured": true,
+    "repoLink": "https://github.com/aryanbhanot05/Tune_Space_2.0"
   },
   {
-    title: "Tune Space",
-    description: "Original music streaming application with personalized recommendations and playlist creation capabilities.",
-    techStack: ["JavaScript", "Node.js", "MongoDB"],
+    "title": "Remote Job Locator",
+    "description": "A comprehensive job board specifically designed for remote work opportunities, featuring advanced filters and real-time updates.",
+    "techStack": ["React", "Express", "PostgreSQL", "REST API"],
+    "featured": true,
+    "repoLink": "https://github.com/aryanbhanot05/remote_job_locator",
+    "link": "https://remote-job-locator-khaki.vercel.app/",
+  }, 
+  {
+    "title": "Branding Machine Vision",
+    "description": "An application of machine vision for quality control and brand logo verification in manufacturing/branding processes.",
+    "techStack": ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+    "repoLink": "https://github.com/aryanbhanot05/branding_machine_vision",
+    "link": "https://branding-machine-vision.vercel.app/",
   },
   {
-    title: "FEC Website Demo",
-    description: "A modern, responsive website demo showcasing web development capabilities for the FEC organization.",
-    techStack: ["React", "Tailwind CSS", "Framer Motion"],
+    "title": "FEC Official Website Demo",
+    "description": "A modern, responsive website demo showcasing web development capabilities for the FEC organization.",
+    "techStack": ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+    "repoLink": "https://github.com/aryanbhanot05/FEC_Official",
+    "link": "https://fec-official.vercel.app/",
   },
   {
-    title: "Netflix Login Clone",
-    description: "A pixel-perfect recreation of the Netflix login page with authentication flow implementation.",
-    techStack: ["React", "CSS", "Firebase Auth"],
+    "title": "Tune Space",
+    "description": "Original music streaming application with personalized recommendations and playlist creation capabilities.",
+    "techStack": ["JavaScript", "Node.js", "supabase"],
+    "repoLink": "https://github.com/aryanbhanot05/Tune_Space",
   },
   {
-    title: "Amazon Homepage Clone",
-    description: "Fully responsive Amazon homepage clone featuring dynamic product displays and cart functionality.",
-    techStack: ["HTML", "CSS", "JavaScript"],
+    "title": "Netflix Clone",
+    "description": "A pixel-perfect recreation of the Netflix login page with authentication flow implementation.",
+    "techStack": ["HTML", "CSS", "JavaScript"],
+    "repoLink": "https://github.com/aryanbhanot05/Netflix_Clone",
   },
   {
-    title: "Customer Appointment System",
-    description: "A full-stack appointment scheduling system with calendar integration and automated notifications.",
-    techStack: ["C#", ".NET", "SQL Server", "Azure"],
+    "title": "Amazon Homepage Clone",
+    "description": "Fully responsive Amazon homepage clone featuring dynamic product displays and cart functionality.",
+    "techStack": ["HTML", "CSS", "JavaScript"],
+    "repoLink": "https://github.com/aryanbhanot05/Amazon_Clone",
   },
   {
-    title: "Employee Management System",
-    description: "Comprehensive HR management solution for tracking employees, attendance, and performance metrics.",
-    techStack: ["Java", "Spring Boot", "MySQL"],
+    "title": "Customer Appointment System",
+    "description": "A full-stack appointment scheduling system with calendar integration and automated notifications.",
+    "techStack": ["C#", ".NET", "SQL Server"],
+    "repoLink": "https://github.com/aryanbhanot05/Customer_Appointment_System",
   },
 ];
 
@@ -98,7 +117,7 @@ const ProjectsSection = () => {
           <span className="text-sm font-medium text-secondary uppercase tracking-widest">
             My Work
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold font-heading mt-4 gradient-text">
+          <h2 className="text-4xl sm:text-5xl font-bold font-heading mt-4 shimmer-text">
             Featured Projects
           </h2>
         </motion.div>
@@ -107,17 +126,47 @@ const ProjectsSection = () => {
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <motion.div key={project.title} variants={itemVariants}>
-              <GlassCard 
-                className={`p-6 h-full flex flex-col ${
-                  project.featured ? 'ring-1 ring-primary/30' : ''
-                }`}
+              <GlassCard
+                className={`p-6 h-full flex flex-col ${project.featured ? 'ring-1 ring-primary/30' : ''
+                  }`}
               >
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="p-3 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20">
                     <Folder className="w-6 h-6 text-secondary" />
                   </div>
-                  
+
+                  {/* 1. VIEW REPOSITORY BUTTON */}
+                  {project.repoLink && (
+                    <motion.a
+                      href={project.repoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-4 z-10 px-4 py-2 text-sm font-bold rounded-lg 
+                         bg-gradient-to-r from-neon-violet via-indigo-500 to-neon-cyan 
+                         text-primary-foreground shadow-lg shadow-neon-purple/50 
+                         hover:shadow-neon-strong transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      View Repository
+                    </motion.a>
+                  )}
+
+                  {/* 2. VIEW LIVE SITE BUTTON (NEW) */}
+                  {project.link && (
+                    <motion.a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className=" absolute top-4 left-72 z-10 px-4 py-2 text-sm font-bold rounded-lg text-white bg-secondary/20 border border-secondary/50 text-secondary-foreground shadow-lg shadow-secondary/30 hover:bg-secondary/40 transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Live Demo
+                    </motion.a>
+                  )}
+
                   <div className="flex gap-2">
                     {project.github && (
                       <motion.a
@@ -158,7 +207,7 @@ const ProjectsSection = () => {
                       </span>
                     )}
                   </div>
-                  
+
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                     {project.description}
                   </p>

@@ -64,7 +64,7 @@ const AboutSection = () => {
           <span className="text-sm font-medium text-secondary uppercase tracking-widest">
             Get to know me
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold font-heading mt-4 gradient-text">
+          <h2 className="text-4xl sm:text-5xl font-bold font-heading mt-4 shimmer-text">
             About Me
           </h2>
         </motion.div>
@@ -75,10 +75,12 @@ const AboutSection = () => {
             <GlassCard className="aspect-square max-w-md mx-auto overflow-hidden">
               <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 via-secondary/10 to-accent-purple/20">
                 <div className="text-center">
-                  <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4">
-                    <span className="text-5xl font-bold font-heading text-primary-foreground">AB</span>
+                  <div className="w-full h-full mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4 mt-2">
+                    <span className="text-5xl font-bold font-heading text-primary-foreground">
+                      <img src="public/ppf_sq.jpeg" alt="Aryan Bhanot" className="w-80 h-80 rounded-sm object-cover" />
+                    </span>
                   </div>
-                  <p className="text-muted-foreground text-sm">Profile Photo</p>
+                  <p className="text-muted-foreground text-xl">The Face Behind the Work</p>
                 </div>
               </div>
             </GlassCard>

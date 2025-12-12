@@ -72,7 +72,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                AB
+              <img src="public/logo.png" alt="Logo" className="w-14 h-14 inline-block mr-2 rounded-full" />
               </motion.a>
 
               {/* Desktop nav */}
@@ -85,7 +85,7 @@ const Navbar = () => {
                       e.preventDefault();
                       scrollToSection(item.href);
                     }}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors relative ${
+                    className={`px-4 py-2 rounded-lg text-base font-medium transition-colors relative ${
                       activeSection === item.href.replace('#', '')
                         ? 'text-foreground'
                         : 'text-muted-foreground hover:text-foreground'

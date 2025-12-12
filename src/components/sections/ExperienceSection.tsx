@@ -14,28 +14,59 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    title: "Web Developer",
-    company: "FEC",
-    period: "2025 – Present",
-    location: "Calgary, AB",
-    description: [
-      "Developing and maintaining responsive web applications using modern frameworks",
-      "Collaborating with cross-functional teams to deliver high-quality digital solutions",
-      "Implementing best practices in web development and code optimization",
+    "title": "Full Stack Developer",
+    "company": "Tartigrade Ltd. (Project for FEC)",
+    "period": "May 2025 – Present (3 months)",
+    "location": "Calgary, Alberta, Canada",
+    "description": [
+      "Led front-end development using HTML5, CSS3, JavaScript, and React to deliver responsive and interactive web interfaces.",
+      "Conducted usability analysis and implemented UI/UX improvements to streamline navigation and enhance visual consistency.",
+      "Collaborated with cross-functional teams to translate technical and business requirements into functional web components.",
+      "Ensured SEO optimization, accessibility compliance, and cross-browser compatibility across all major platforms."
     ],
-    color: "from-primary to-secondary",
+    "color": "from-primary to-secondary"
   },
   {
-    title: "Manager of Operations",
-    company: "SOND 3D",
-    period: "2025 – Present",
-    location: "Calgary, AB",
-    description: [
-      "Overseeing daily operations of 3D printing production and fulfillment",
-      "Managing inventory, equipment maintenance, and quality control processes",
-      "Developing business strategies to expand market reach and client base",
+    "title": "Manager of Operations",
+    "company": "Sond Industries",
+    "period": "January 2025 – Present (1 year)",
+    "location": "Calgary, Alberta, Canada",
+    "description": [
+      "Managed and fulfilled 3D printing orders for clients in education and prototyping sectors[cit.",
+      "Scheduled and led virtual meetings to capture client design requirements.",
+      "Maintained operational logs and ensured consistent output quality.",
+      "Handled customer communication and feedback to optimize service."
     ],
-    color: "from-secondary to-accent-purple",
+    "color": "from-secondary to-accent-purple"
+  },
+  {
+    "title": "AI Trainer",
+    "company": "Outlier",
+    "period": "August 2025 – Present (5 months)",
+    "location": "Calgary, Alberta, Canada",
+    "description": [
+      "Contributed to training and improving large language models by creating high-quality data, evaluating AI responses, and guiding model behavior.",
+      "Designed clear, challenging prompts across multiple domains to test model reasoning.",
+      "Reviewed and corrected AI-generated answers to ensure accuracy and alignment.",
+      "Created grading rubrics and evaluated responses based on quality, depth, and factual correctness.",
+      "Identified gaps, inconsistencies, or risks in AI outputs and offered improvements."
+    ],
+    "color": "from-accent-purple to-pink-500"
+  },
+  {
+    "title": "Logistics Operations Manager",
+    "company": "Naveen Enterprises",
+    "period": "April 2020 – July 2024 (4 years 4 months)",
+    "location": "Ludhiana, Punjab, India",
+    "description": [
+      "Led and supervised the facility team to ensure smooth, on-time workflow.",
+      "Overseeing all incoming market orders and coordinating deliveries within 24 hours.",
+      "Managed product inspection and quality checks before dispatch.",
+      "Handled bookkeeping, payment records, and inventory accuracy.",
+      "Optimized operational processes to reduce delays and improve turnaround times.",
+      "Acted as the main link between suppliers, customers, and internal staff to keep communication clean and efficient."
+    ],
+    "color": "from-yellow-500 to-primary"
   },
 ];
 
@@ -79,7 +110,7 @@ const ExperienceSection = () => {
           <span className="text-sm font-medium text-secondary uppercase tracking-widest">
             My Journey
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold font-heading mt-4 gradient-text">
+          <h2 className="text-4xl sm:text-5xl font-bold font-heading mt-4 shimmer-text">
             Experience
           </h2>
         </motion.div>
@@ -108,9 +139,9 @@ const ExperienceSection = () => {
                       <h3 className="text-2xl font-bold font-heading text-foreground">
                         {exp.title}
                       </h3>
-                      <p className="text-lg font-medium gradient-text">{exp.company}</p>
+                      <p className="text-lg font-medium bg-gradient-to-r from-neon-purple via-neon-violet to-neon-aqua bg-clip-text text-transparent inline-block">{exp.company}</p>
                     </div>
-                    
+
                     <div className="flex flex-col items-end gap-2 text-sm text-muted-foreground">
                       <span className="flex items-center gap-2">
                         <Calendar className="w-4 h-4" />

@@ -66,26 +66,45 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulated form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // 1. Define the URL to your PHP script
+    // NOTE: Replace '/send_email.php' with the actual path on your server!
+    const endpointUrl = '/send_email.php'; 
 
-    // TODO: Add API endpoint to send form data
-    // fetch('/api/contact', { 
-    //   method: 'POST', 
-    //   body: JSON.stringify(formData),
-    //   headers: { 'Content-Type': 'application/json' }
-    // });
+    try {
+        const response = await fetch(endpointUrl, { 
+            method: 'POST', 
+            // 2. Send the formData state as a JSON string
+            body: JSON.stringify(formData),
+            headers: { 
+                'Content-Type': 'application/json' 
+            }
+        });
 
-    console.log('Form Data:', formData);
-    
-    toast({
-      title: "Message Sent! (Demo)",
-      description: "This is a demo - no actual email was sent. Backend integration coming soon!",
-    });
+        const result = await response.json();
 
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
-  };
+        if (response.ok && result.success) {
+            toast({
+                title: "Success!",
+                description: "Your message has been sent successfully. Thank you!",
+                variant: "default"
+            });
+            // 3. Clear the form on success
+            setFormData({ name: '', email: '', message: '' });
+        } else {
+            // Handle error response from PHP script
+            throw new Error(result.message || "An unknown error occurred.");
+        }
+    } catch (error) {
+        console.error('Submission Error:', error);
+        toast({
+            title: "Submission Failed",
+            description: (error instanceof Error) ? error.message : "We could not send your message. Please try again later or email me directly.",
+            variant: "destructive"
+        });
+    } finally {
+        setIsSubmitting(false);
+    }
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
@@ -108,7 +127,7 @@ const ContactSection = () => {
           <span className="text-sm font-medium text-secondary uppercase tracking-widest">
             Get In Touch
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold font-heading mt-4 gradient-text">
+          <h2 className="text-4xl sm:text-5xl font-bold font-heading mt-4 shimmer-text">
             Contact Me
           </h2>
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">

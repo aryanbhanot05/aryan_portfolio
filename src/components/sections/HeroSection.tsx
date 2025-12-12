@@ -78,9 +78,9 @@ const HeroSection = () => {
           variants={itemVariants}
           className="text-xl sm:text-2xl md:text-3xl text-muted-foreground mb-4 font-light"
         >
-          <span className="gradient-text font-medium">Web Developer</span>
+          <span className="gradient-text font-medium">Software Developer</span>
           <span className="mx-3 text-border">•</span>
-          <span className="text-foreground/80">Full-Stack Creator</span>
+          <span className="text-foreground/80">AI Trainer</span>
           <span className="mx-3 text-border">•</span>
           <span className="gradient-text-accent font-medium">3D Printing Entrepreneur</span>
         </motion.p>
