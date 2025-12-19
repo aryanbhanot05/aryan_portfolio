@@ -159,7 +159,7 @@ const ProjectsSection = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className=" absolute top-4 left-72 z-10 px-4 py-2 text-sm font-bold rounded-lg text-white bg-secondary/20 border border-secondary/50 text-secondary-foreground shadow-lg shadow-secondary/30 hover:bg-secondary/40 transition-all duration-300"
+                      className=" absolute top-4 right-72 z-10 px-4 py-2 text-sm font-bold rounded-lg text-white bg-secondary/20 border border-secondary/50 text-secondary-foreground shadow-lg shadow-secondary/30 hover:bg-secondary/40 transition-all duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.98 }}
                     >
