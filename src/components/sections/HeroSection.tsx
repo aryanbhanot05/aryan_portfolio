@@ -122,7 +122,7 @@ const HeroSection = () => {
         {/* Scroll indicator */}
         <motion.div
           variants={itemVariants}
-          className="absolute -bottom-20 left-1/2 -translate-x-1/2"
+          className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-40 -ml-11"
         >
           <motion.button
             onClick={() => scrollToSection('about')}
