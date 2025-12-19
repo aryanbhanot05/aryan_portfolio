@@ -14,7 +14,7 @@ const Footer = () => {
               className="text-2xl font-bold font-heading shimmer-text"
               whileHover={{ scale: 1.05 }}
             >
-              <img src="public/logo.png" alt="Logo" className="w-14 h-14 inline-block mr-2 rounded-full" />
+              <img src="assets/logo.png" alt="Logo" className="w-14 h-14 inline-block mr-2 rounded-full" />
             </motion.span>
             <p className="text-sm text-muted-foreground mt-2">
               © {currentYear} Aryan Bhanot. All rights reserved.

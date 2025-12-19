@@ -72,7 +72,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-              <img src="public/logo.png" alt="Logo" className="w-14 h-14 inline-block mr-2 rounded-full" />
+              <img src="/logo.png" alt="Logo" className="w-14 h-14 inline-block mr-2 rounded-full" />
               </motion.a>
 
               {/* Desktop nav */}
