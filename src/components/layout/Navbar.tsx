@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import logo from '@/assets/logo.png';
+
 
 const navItems = [
   { name: 'Home', href: '#hero' },
@@ -72,7 +74,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-              <img src="/logo.png" alt="Logo" className="w-14 h-14 inline-block mr-2 rounded-full" />
+              <img src={logo} alt="Logo" className="w-14 h-14 inline-block mr-2 rounded-full" />
               </motion.a>
 
               {/* Desktop nav */}

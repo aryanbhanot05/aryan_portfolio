@@ -2,6 +2,8 @@ import { motion, useInView, Variants } from 'framer-motion';
 import { useRef } from 'react';
 import { GlassCard } from '@/components/ui/glass-card';
 import { GraduationCap, Code, Printer } from 'lucide-react';
+import ppf from '@/assets/ppf_sq.jpeg';
+
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -77,7 +79,7 @@ const AboutSection = () => {
                 <div className="text-center">
                   <div className="w-full h-full mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4 mt-2">
                     <span className="text-5xl font-bold font-heading text-primary-foreground">
-                      <img src="public/ppf_sq.jpeg" alt="Aryan Bhanot" className="w-80 h-80 rounded-sm object-cover" />
+                      <img src={ppf} alt="Aryan Bhanot" className="w-80 h-80 rounded-sm object-cover" />
                     </span>
                   </div>
                   <p className="text-muted-foreground text-xl">The Face Behind the Work</p>

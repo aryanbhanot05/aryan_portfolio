@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart, Github, Linkedin, Mail } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,7 +15,7 @@ const Footer = () => {
               className="text-2xl font-bold font-heading shimmer-text"
               whileHover={{ scale: 1.05 }}
             >
-              <img src="assets/logo.png" alt="Logo" className="w-14 h-14 inline-block mr-2 rounded-full" />
+              <img src={logo} alt="Logo" className="w-14 h-14 inline-block mr-2 rounded-full" />
             </motion.span>
             <p className="text-sm text-muted-foreground mt-2">
               © {currentYear} Aryan Bhanot. All rights reserved.
