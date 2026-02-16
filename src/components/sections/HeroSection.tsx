@@ -1,8 +1,17 @@
-import { motion } from 'framer-motion';
-import { ArrowDown, FileText, Mail } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowDown, FileText, Mail, X, Download, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import ResumeModal from '../ResumeModal';
 
+interface ResumeModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 const HeroSection = () => {
+
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -102,12 +111,18 @@ const HeroSection = () => {
             variant="hero"
             size="lg"
             className="group"
-            onClick={() => window.open('#', '_blank')}
+            onClick={() => setIsResumeOpen(true)} // Toggle modal open
           >
             <FileText className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
             View Resume
           </Button>
-          
+
+          {/* 5. Add the Modal Component at the bottom */}
+          <ResumeModal
+            isOpen={isResumeOpen}
+            onClose={() => setIsResumeOpen(false)}
+          />
+
           <Button
             variant="heroOutline"
             size="lg"
